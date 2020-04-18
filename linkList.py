@@ -81,7 +81,7 @@ class linkList:
         tmp=self.head
         while tmp is not None:
             if tmp.data is item:
-                print tmp.data
+                print (tmp.data)
                 tmp=tmp.getNext()
                 count+=1
             else:
