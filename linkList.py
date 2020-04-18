@@ -44,29 +44,9 @@ class linkList:
         if self.n==0:
             self.tail=new_element
         self.n += 1
-    def size(self):
-        count=0
-        tmp= self.head
-        while tmp is not None:
-            count +=1
-            tmp = tmp.getNext()
-        return count
+    #end list
     def endList(self,item):
         new_element=Node(item)
-        # current =self.head
-        # prev= None
-        # pos=0
-        # length = self.size()
-        # while pos < length:
-        #     prev= current # prev become head(store the insert begin)
-        #     current = current.getNext()
-        #     pos +=1
-        # if prev is None:
-        #     current.setNext(self.head)
-        #     self.head=new_element
-        # else:
-        #     prev.setNext(new_element)
-        #     self.tail=prev
         if self.n==0:
             self.addBegin(item)
         else:
@@ -75,6 +55,19 @@ class linkList:
             tail.setNext(new_element)
             self.tail=new_element
             self.n +=1
+    #delete head
+    def deleteBegin(self):
+        if self.n==0:
+            print("Cant delete")
+        else:
+            tmp = self.head
+            self.head = tmp.getNext()
+            del tmp
+            if self.n==1:
+                self.tail = None
+            self.n -=1
+            print("delete successful")
+    #search list
     def searchLinkList(self,item):
         count=0
         tmp = Node(item)
@@ -104,13 +97,17 @@ while(1):
     elif choice ==2:
         num = int(input("Input the number:"))
         f.endList(num)
+    #delete Begin
+    elif choice==3:
+        f.deleteBegin()
+    #search list
     elif choice==6:
         num = int(input("Search number of Data:"))
         f.searchLinkList(num)
     #show all
     elif choice == 7:
         f.showAll()
-    
+    #Exit the Program
     elif choice==8:
         print ('Exit the program')
         break
