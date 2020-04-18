@@ -1,15 +1,15 @@
 class Menu:
-    print '\t\t==========================='
-    print '\t\t+Welcome to Link list -__-+'
-    print '\t\t===========================\n'
-    print '1.Set begin of linklist.\n'
-    print '2.Set the end of linklist.\n'
-    print '3.Delete Begin.\n'
-    print '4.Delete End.\n'
-    print '5.Delete Begin.\n'
-    print '6.Search List.\n'
-    print '7. Show List.\n'
-    print '8. Exit the program.\n'
+    print ('\t\t===========================')
+    print ('\t\t+Welcome to Link list -__-+')
+    print ('\t\t===========================\n')
+    print ('1.Set begin of linklist.\n')
+    print ('2.Set the end of linklist.\n')
+    print ('3.Delete Begin.\n')
+    print ('4.Delete End.\n')
+    print ('5.Delete Begin.\n')
+    print ('6.Search List.\n')
+    print ('7. Show List.\n')
+    print ('8. Exit the program.\n')
 
 class Node:
     #struct element create data set as val and 
@@ -53,20 +53,28 @@ class linkList:
         return count
     def endList(self,item):
         new_element=Node(item)
-        current =self.head
-        prev= None
-        pos=0
-        length = self.size()
-        while pos < length:
-            prev= current
-            current = current.getNext()
-            pos +=1
-        if prev is None:
-            current.setNext(self.head)
-            self.head=new_element
+        # current =self.head
+        # prev= None
+        # pos=0
+        # length = self.size()
+        # while pos < length:
+        #     prev= current # prev become head(store the insert begin)
+        #     current = current.getNext()
+        #     pos +=1
+        # if prev is None:
+        #     current.setNext(self.head)
+        #     self.head=new_element
+        # else:
+        #     prev.setNext(new_element)
+        #     self.tail=prev
+        if self.n==0:
+            self.addBegin(item)
         else:
-            prev.setNext(new_element)
-            self.tail=prev
+            tail= self.tail
+            new_element.setNext(None)
+            tail.setNext(new_element)
+            self.tail=new_element
+            self.n +=1
     def searchLinkList(self,item):
         count=0
         tmp = Node(item)
@@ -82,7 +90,7 @@ class linkList:
     def showAll(self):
         tmp =self.head
         while tmp is not None:
-            print tmp.data
+            print (tmp.data)
             tmp = tmp.next
 f = linkList()
 while(1):
