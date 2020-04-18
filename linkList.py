@@ -112,6 +112,6 @@ while(1):
         f.showAll()
     
     elif choice==8:
-        print 'Exit the program'
+        print ('Exit the program')
         break
 
