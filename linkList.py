@@ -6,9 +6,9 @@ class Menu:
     print ('2.Set the end of linklist.\n')
     print ('3.Delete Begin.\n')
     print ('4.Delete End.\n')
-    print ('6.Search List.\n')
-    print ('7. Show List.\n')
-    print ('8. Exit the program.\n')
+    print ('5.Search List.\n')
+    print ('6. Show List.\n')
+    print ('7. Exit the program.\n')
 
 class Node:
     #struct element create data set as val and 
@@ -120,14 +120,14 @@ while(1):
     elif choice==4:
         f.deleteEndList()
     #search list
-    elif choice==6:
+    elif choice==5:
         num = int(input("Search number of Data:"))
         f.searchLinkList(num)
     #show all
-    elif choice == 7:
+    elif choice == 6:
         f.showAll()
     #Exit the Program
-    elif choice==8:
+    elif choice==7:
         print ('Exit the program')
         break
 
