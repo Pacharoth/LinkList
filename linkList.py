@@ -37,6 +37,7 @@ class linkList:
         return self.head is None,self.tail is None,self.n
     #add the begin
     def addBegin(self,item):
+        p=0
         new_element = Node(item)#set in function node
         new_element.setNext(self.head)
         self.head =new_element
@@ -45,6 +46,7 @@ class linkList:
         self.n += 1
     #end list
     def endList(self,item):
+        p=0
         new_element=Node(item)
         if self.n==0:
             self.addBegin(item)
@@ -57,8 +59,10 @@ class linkList:
     #delete head
     def deleteBegin(self):
         if self.n==0:
+            p=0
             print("Cant delete")
         else:
+            p=1
             tmp = self.head
             self.head = tmp.getNext()
             tmp = None
@@ -69,11 +73,14 @@ class linkList:
     #delete end of list
     def deleteEndList(self):
         if self.n==0:
+            p=0
             print("Bro you cant delete")
         else:
             if self.n==1:
+                p=0
                 self.deleteBegin()
             else:
+                p=1
                 tmp =self.head
                 for i in range(0,self.n-2):
                     tmp =tmp.getNext()
@@ -95,12 +102,20 @@ class linkList:
                 count+=1
             else:
                 tmp=tmp.getNext()
-        print ('The result of {} is {}'.format(item,count))
+        if count ==0:
+            print("No result")
+        else:
+            print ('The result of {} is {}'.format(item,count))
     def showAll(self):
         tmp =self.head
+        print("\t\t===============")
+        print("\t\t+The result-_-+")
+        print("\t\t===============")
         while tmp is not None:
-            print (tmp.data)
+            print ("{}\t".format(tmp.data))
             tmp = tmp.next
+        if p==0:
+            print("Not Found")
 f = linkList()
 while(1):
     p=Menu()
