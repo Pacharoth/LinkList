@@ -62,11 +62,28 @@ class linkList:
         else:
             tmp = self.head
             self.head = tmp.getNext()
-            del tmp
+            tmp = None
             if self.n==1:
                 self.tail = None
             self.n -=1
             print("delete successful")
+    #delete end of list
+    def deleteEndList(self):
+        if self.n==0:
+            print("Bro you cant delete")
+        else:
+            if self.n==1:
+                self.deleteBegin()
+            else:
+                tmp =self.head
+                for i in range(0,self.n-2):
+                    tmp =tmp.getNext()
+                self.tail=tmp
+                tail=self.tail
+                tail.setNext(None)
+                tmp =None
+                self.n -=1
+                print("Delete successful")
     #search list
     def searchLinkList(self,item):
         count=0
@@ -100,6 +117,9 @@ while(1):
     #delete Begin
     elif choice==3:
         f.deleteBegin()
+    #delete end of list
+    elif choice==4:
+        f.deleteEndList()
     #search list
     elif choice==6:
         num = int(input("Search number of Data:"))
