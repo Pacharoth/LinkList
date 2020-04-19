@@ -6,7 +6,6 @@ class Menu:
     print ('2.Set the end of linklist.\n')
     print ('3.Delete Begin.\n')
     print ('4.Delete End.\n')
-    print ('5.Delete Begin.\n')
     print ('6.Search List.\n')
     print ('7. Show List.\n')
     print ('8. Exit the program.\n')
